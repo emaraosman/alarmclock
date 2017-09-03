@@ -47,6 +47,21 @@ table {
 	border-spacing: 0;
 }
 
+/*STYLE BEGINS BELOW*/
+
+html{
+	height: 100%;
+	width: 100%;
+}
+
+body{
+	background-image: linear-gradient(to bottom right, #A60DFF 0%, #3DFFEC 100%);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	height: 100%;
+	width: 100%;
+}
 
 .clock-container{
   height: 300px;
@@ -54,7 +69,8 @@ table {
   background-color: gray;
 }
 
-.clock-time{
+.time{
+	margin: 0 auto;
 
 }
 
