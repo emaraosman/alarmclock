@@ -55,7 +55,7 @@ html{
 }
 
 body{
-	background-image: linear-gradient(to bottom right, #A60DFF 0%, #3DFFEC 100%);
+	background-image: url("https://static.pexels.com/photos/289395/pexels-photo-289395.jpeg");
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
@@ -75,13 +75,61 @@ body{
 }
 
 
+.underlay{
+	position: absolute;
+	background-color: rgba(0,0,0,0.3);
+	filter: blur(10px);
+	height: 100%;
+	width:100%;
+	z-index: 1;
+}
+
+.overlay{
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	z-index: 2;
+	text-align: center;
+	box-sizing: border-box;
+	/*overflow: hidden;*/
+}
 
 
+.timetext{
+	margin-top: 10%;
+	text-transform: uppercase;
+	font-size: 130px;
+	font-weight: 100;
+	font-family:"Lato";
+	color: white;
+	text-shadow: 1px 0px 9px lightblue;
+}
 
+.alarmtext{
+	text-transform: uppercase;
+	font-size: 30px;
+	font-weight: 100;
+	font-family:"Lato";
+	color: white;
+	text-shadow: 1px 0px 20px lightblue;
+	margin-bottom: -50px;
+	margin-top: 50px;
+}
 
+select{
+	margin: 0px;
+	font-size: 30px;
+}
 
-
-
+#timesup{
+	display: none;
+	text-transform: uppercase;
+	font-size: 100px;
+	font-weight: 100;
+	font-family:"Lato";
+	color: white;
+	text-shadow: 1px 0px 20px yellow;
+}
 
 
 

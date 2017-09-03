@@ -4,19 +4,34 @@
 	<title>alarm</title>
 
 	<link rel="stylesheet" href="assets/stylesheets/main.css">
+	<link rel="stylesheet" href="assets/stylesheets/animate.css">
 
+<link href="https://fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet">
 
 </head>
-<body onload="clock()">
+<body onload="clock()" class="">
+
+<div class="underlay">
+
+</div>
 
 
 
+<div class="overlay">
+
+	<div class="timetext">
 
 
-	<div id="time"></div>
+	<div id="time" class="animated fadeInDown"></div>
 
-	<!-- <div id="ampm">am</div> -->
+	<div id="timesup" class="animated bounceIn">
+		TIMES UP
 
+	</div>
+
+	<div class="alarmtext">
+		Set Alarm:
+	</div>
 	<select id="endTimeHrs">
 	  <option value="1">1</option>
 	  <option value="2">2</option>
@@ -103,14 +118,15 @@
 
 	</select>
 
+	</div>
+
+</div>
 
 
 
+<audio id="johnnyboy" src="assets/stylesheets/johnnyboy.mp3">
 
- 	<audio src="" id="alarm-sound" autoplay="false">
-
- </audio>
-
+</audio>
 
 
 
@@ -129,6 +145,7 @@
 		var mins = currTime.getMinutes();
 		// var sec = currTime.getSeconds();
 		// var endTime = document.getElementById('endTime').value;
+		var ampm="am"
 
 		var dhours = hours;
 		var dmins = mins;
@@ -137,52 +154,33 @@
 
 		if(dhours>12){
 			dhours = dhours-12;
-			//dhours = "0" + dhours;
-
-
-			// document.getElementById('ampm').innerHTML="pm";
-			// var ampm="pm"
-			// realTime = document.getElementById('time').innerHTML + "pm";
+			ampm="pm";
 		}
 
-		// if(sec<10){
-		// 		dsec="0"+sec;
-		// 	}
+
 
 		if(mins<10){
 				dmins ="0" + mins;
 			}
 
 
-
-			else{
-				// realTime = document.getElementById('time').innerHTML + " am";
-				ampm = "am";
-			}
-
 		var displayTime = document.getElementById('time').innerHTML= dhours+":"+dmins+ampm
-		// +":"+dsec+"am";
-		var realTime=document.getElementById('time').innerHTML= hours+":"+mins
-		// +":"+sec;
 
-		// console.log(realTime)
+
+
 
 		document.getElementById('time').innerHTML= dhours+":"+dmins+ ampm;
-		// +":"+dsec
 
 
-				console.log(alarmTime)
-						console.log(alarmTime)
+
+
 
 			if (displayTime == alarmTime){
-				alert("ITS TIME");
-				// document.getElementById('alarm-sound').autoplay="true";
+				document.getElementById("timesup").style.display = "block";
+				document.getElementById("johnnyboy").play();
 			}
-			// console.log(displayTime)
+
 		}
-
-
-
 
 		setInterval("clock()",1000);
 
