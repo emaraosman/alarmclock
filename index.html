@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>alarm</title>
+
+	<link rel="stylesheet" href="assets/stylesheets/main.css">
+
+
+</head>
+<body>
+
+
+
+
+	<input type="button" value="start" >
+
+	<div id="d1"></div><div id="ampm">am</div>
+
+
+	<input id="endTime" type="text" name="" >
+
+ <audio src="" id="alarm-sound" autoplay="false">
+
+ </audio>
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+	function clock(){
+		var d = new Date();
+		var h = d.getHours();
+		var m = d.getMinutes();
+		var s = d.getSeconds();
+		var endTime = document.getElementById('endTime').value;
+
+			if(m<10){
+				m ="0" + m;
+			}
+
+			if(h>12){
+				h = h-12;
+				document.getElementById('ampm').innerHTML="pm";
+			}
+
+		document.getElementById('d1').innerHTML= h+":"+m+":"+s;
+
+
+			var realTime=document.getElementById('d1').innerHTML= h+":"+m+":"+s;
+
+			if (realTime == endTime){
+				alert("ITS TIME");
+				document.getElementById('alarm-sound').autoplay="true";
+			}
+
+		}
+
+		setInterval("clock()",0);
+
+</script>
+</body>
+</html>
